@@ -19,6 +19,10 @@ public class ProgramaR {
                 // Processar Pedido e criar Resposta
                 Integer resultado = pedidoRecebido.getNumeroPosicao();
                 Resposta resposta = new Resposta(resultado);
+                if (resposta.getResultado() != null)
+                    System.out.println("Achei!");
+                else
+                    System.out.println("Não achei");
                 // Enviar Resposta
                 transmissor.writeObject(resposta);
 
