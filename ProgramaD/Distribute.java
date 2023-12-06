@@ -7,9 +7,9 @@ import java.net.Socket;
 public class Distribute {
 
     public static void main(String[] args) {
-        String[] ips = {"172.16.20.139", "172.16.21.132"}; // ips dos pc daqui do lado
+        String[] ips = {"172.19.208.1"}; // ips dos pc daqui do lado
 
-        int[] vetor = Vector.populateVector(10);
+        int[] vetor = Vector.populateVector(10000000);
 
         int numPartes = ips.length;
 
@@ -29,7 +29,7 @@ public class Distribute {
                         parteVetor[j - inicio] = vetor[j];
                     }
 
-                    Socket conexao = new Socket(ips[i], 25565);
+                    Socket conexao = new Socket(ips[i], 12345);
                     ObjectOutputStream transmissor = new ObjectOutputStream(conexao.getOutputStream());
                     ObjectInputStream receptor = new ObjectInputStream(conexao.getInputStream());
 
