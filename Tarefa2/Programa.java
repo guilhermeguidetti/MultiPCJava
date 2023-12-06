@@ -31,7 +31,7 @@ public class Programa
                 
                 int numberOfProcessors = Runtime.getRuntime().availableProcessors ();
                 System.out.printf("Número de processadores (logo, número de threads): %d%n", numberOfProcessors);
-                Vector2<Integer> armazenamento = (Vector2) receptor.readObject();
+                Vector2<Integer> armazenamento = ((Pedido) receptor.readObject()).getV();
                 
                 System.out.println ("Tecle ENTER para ativar as tarefas e");
                 System.out.println ("Tecle novamente ENTER para terminar o programa.");

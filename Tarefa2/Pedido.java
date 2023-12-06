@@ -1,7 +1,11 @@
 public class Pedido extends Comunicado {
-    private int[] vetorInt;
+    private Vector2<Integer> vetor;
 
-    public Pedido(int[] vetorInt) {
-        this.vetorInt = vetorInt;
+    public Pedido(Vector2<Integer> vetor) {
+        this.vetor = vetor;
+    }
+
+    public Vector2<Integer> getV() {
+        return (Vector2<Integer>)this.vetor.clone();
     }
 }
