@@ -42,7 +42,7 @@ public class Distribute {
         return ordenado;
     }
     public static void main(String[] args) {
-        String[] ips = {"172.19.208.1"}; // ips dos pc daqui do lado
+        String[] ips = {"172.17.0.1", }; // ips dos pc daqui do lado
         Vector2<Integer> vetor = new Vector2<>();
         popularAleatoriamente(vetor);
 
@@ -59,10 +59,7 @@ public class Distribute {
                     int inicio = i * tamanhoParte;
                     int fim = (i == numPartes - 1) ? vetor.getOccupied() : (i + 1) * tamanhoParte;
 
-                    int[] parteVetor = new int[fim - inicio];
-                    for (int j = inicio; j < fim; j++) {
-                        parteVetor[j - inicio] = vetor.get(j);
-                    }
+                    Vector2<Integer> parteVetor = vetor.slice(inicio, fim);
 
                     Socket conexao = new Socket(ips[i], 12345);
                     ObjectOutputStream transmissor = new ObjectOutputStream(conexao.getOutputStream());
@@ -74,8 +71,7 @@ public class Distribute {
                     System.out.println("Pedido enviado para " + ips[i]);
 
                     // pegar resposta
-                    Resposta t1 = (Resposta) receptor.readObject();
-                    desordenado.add(t1.getResultado());
+                    desordenado.add((Vector2<Integer>)receptor.readObject());
 
                     // fecha tudo
                     transmissor.close();
