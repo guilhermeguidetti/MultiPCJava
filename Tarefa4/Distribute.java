@@ -6,6 +6,12 @@ import java.net.Socket;
 import java.util.Random;
 import java.util.Vector;
 
+
+// Ariane Paula Barros
+// Guilherme Guidetti
+// Gustavo Peres
+// Henrique Vergili
+
 public class Distribute {
 
     public static void popularAleatoriamente(Vector2<Integer> v) {
@@ -42,7 +48,7 @@ public class Distribute {
         return ordenado;
     }
     public static void main(String[] args) {
-        String[] ips = {"172.17.0.1", }; // ips dos pc daqui do lado
+        String[] ips = {"192.168.16.1", "192.168.0.102"}; // ips dos pc daqui do lado
         Vector2<Integer> vetor = new Vector2<>();
         popularAleatoriamente(vetor);
 

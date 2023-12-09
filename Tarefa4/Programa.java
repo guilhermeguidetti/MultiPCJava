@@ -5,7 +5,10 @@ import java.net.Socket;
 import java.util.Random;
 
 
-// 21011817 - Ariane Paula Barros
+// Ariane Paula Barros
+// Guilherme Guidetti
+// Gustavo Peres
+// Henrique Vergili
 public class Programa
 {
     public static void popularAleatoriamente(Vector2<Integer> v) {
